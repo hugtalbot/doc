@@ -15,13 +15,29 @@ contain.
 A minimal plugin: MyPlugin
 ==========================
 
+
 As of now, the most convenient way to write a plugin is to place it
-inside the source tree of SOFA, in applications/plugins/. For example,
-here we create a plugin called MyPlugin, which we will place in
-/applications/plugins/MyPlugin. It contains only the following files:
+anywhere on your computer and compile it alone. All you will need is
+a binary version of SOFA either [downloaded from the SOFA Download](https://www.sofa-framework.org/download/#binaries) webpage or [compiled from the source code](https://www.sofa-framework.org/download/#sources).
+
+Let's say from now on that the plugin is named "MyPlugin". An empty plugin
+needs only the following files:
 
 -   **initMyPlugin.h** and **initMyPlugin.cpp**: the plugin interface
 -   the **CMakeLists.txt** file which describes how to build to plugin;
+
+
+#### Naming convention
+
+We now encourage plugin developers to choose **short and meaningful** names
+easing the understanding of the included features for other developers
+and users.
+
+Please avoid using the keyword "Plugin" as prefix or suffix.
+
+Moreover, the keyword "Plugin" as prefix is only allowed when the plugin
+name could be mixed up with another existing library (ex: a plugin allowing
+to use CUDA kernels in SOFA, should be named "SofaCUDA").
 
 #### initMyPlugin.h
 
